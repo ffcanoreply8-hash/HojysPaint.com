@@ -45,8 +45,8 @@ const summaryAddOns = document.getElementById("summaryAddOns");
 const formStatus = document.getElementById("formStatus");
 const currentYear = document.getElementById("currentYear");
 
-const serviceQuoteButtons = document.querySelectorAll(
-    ".service-quote-link"
+const serviceCards = document.querySelectorAll(
+    ".service-card[data-service-choice]"
 );
 
 /* =========================================================
@@ -554,28 +554,52 @@ quoteForm
     });
 
 /* =========================================================
-   SERVICE CARD QUOTE BUTTONS
+   CLICKABLE SERVICE CARDS
 ========================================================= */
 
-serviceQuoteButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-        const serviceCard = button.closest("[data-service-choice]");
-        const serviceChoice =
-            serviceCard?.dataset.serviceChoice || "";
+function openServiceQuote(serviceCard) {
+    const serviceChoice = serviceCard.dataset.serviceChoice || "";
 
-        if (serviceChoice && servicePricing[serviceChoice]) {
-            serviceType.value = serviceChoice;
-            updateQuoteSummary();
+    if (serviceChoice && servicePricing[serviceChoice]) {
+        serviceType.value = serviceChoice;
+        updateQuoteSummary();
+    }
+
+    document.getElementById("quote").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+    window.setTimeout(() => {
+        propertySize.focus();
+    }, 650);
+}
+
+serviceCards.forEach((serviceCard) => {
+    const cardTitle =
+        serviceCard.querySelector("h3")?.textContent.trim() ||
+        "service";
+
+    serviceCard.setAttribute("role", "button");
+    serviceCard.setAttribute("tabindex", "0");
+    serviceCard.setAttribute(
+        "aria-label",
+        `Get a quote for ${cardTitle}`
+    );
+
+    serviceCard.addEventListener("click", () => {
+        openServiceQuote(serviceCard);
+    });
+
+    serviceCard.addEventListener("keydown", (event) => {
+        if (event.target !== serviceCard) {
+            return;
         }
 
-        document.getElementById("quote").scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-
-        window.setTimeout(() => {
-            propertySize.focus();
-        }, 650);
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openServiceQuote(serviceCard);
+        }
     });
 });
 
