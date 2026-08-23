@@ -49,6 +49,15 @@ const serviceCards = document.querySelectorAll(
     ".service-card[data-service-choice]"
 );
 
+const portfolioOpenButtons = document.querySelectorAll(".portfolio-open");
+const projectLightbox = document.getElementById("projectLightbox");
+const lightboxImage = document.getElementById("lightboxImage");
+const lightboxTitle = document.getElementById("lightboxTitle");
+const lightboxLabel = document.getElementById("lightboxLabel");
+const lightboxCloseButtons = document.querySelectorAll("[data-lightbox-close]");
+
+let lastLightboxTrigger = null;
+
 /* =========================================================
    CURRENT YEAR
 ========================================================= */
@@ -203,6 +212,68 @@ function updateActiveNavigation() {
 
 window.addEventListener("scroll", updateActiveNavigation, {
     passive: true
+});
+
+/* =========================================================
+   PROJECT LIGHTBOX
+========================================================= */
+
+function openProjectLightbox(trigger) {
+    if (!projectLightbox || !lightboxImage || !lightboxTitle || !lightboxLabel) {
+        return;
+    }
+
+    const imageSource = trigger.dataset.projectImage || "";
+    const projectTitle = trigger.dataset.projectTitle || "Project photo";
+    const projectLabel = trigger.dataset.projectLabel || "Featured work";
+    const sourceImage = trigger.querySelector("img");
+
+    lastLightboxTrigger = trigger;
+    lightboxImage.src = imageSource;
+    lightboxImage.alt = sourceImage?.alt || projectTitle;
+    lightboxTitle.textContent = projectTitle;
+    lightboxLabel.textContent = projectLabel;
+
+    projectLightbox.classList.add("open");
+    projectLightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lightbox-open");
+
+    window.setTimeout(() => {
+        projectLightbox.querySelector(".project-lightbox-close")?.focus();
+    }, 30);
+}
+
+function closeProjectLightbox() {
+    if (!projectLightbox) {
+        return;
+    }
+
+    projectLightbox.classList.remove("open");
+    projectLightbox.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("lightbox-open");
+
+    if (lightboxImage) {
+        lightboxImage.src = "";
+    }
+
+    lastLightboxTrigger?.focus();
+    lastLightboxTrigger = null;
+}
+
+portfolioOpenButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        openProjectLightbox(button);
+    });
+});
+
+lightboxCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeProjectLightbox);
+});
+
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && projectLightbox?.classList.contains("open")) {
+        closeProjectLightbox();
+    }
 });
 
 /* =========================================================
