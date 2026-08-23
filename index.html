@@ -1,1571 +1,1756 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Hojy's Paint & Property Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<style>
+:root{
+  --cream:#fffdf8;
+  --cream2:#f4eee3;
+  --navy:#102331;
+  --text:#62727a;
+  --green:#5b9e3c;
+  --green2:#34752d;
+  --line:rgba(16,35,49,.13);
+  --white:#fff;
+  --shadow:0 25px 65px rgba(16,35,49,.14);
+}
 
-    <meta
-        name="description"
-        content="Hojy's Paint & Property Care provides premium painting, seasonal maintenance, landscaping, and property improvement services."
-    >
+*{box-sizing:border-box}
 
-    <meta
-        name="keywords"
-        content="painting, landscaping, seasonal maintenance, exterior painting, interior painting, property care"
-    >
+html{
+  scroll-behavior:smooth;
+  scroll-padding-top:90px;
+}
 
-    <meta name="theme-color" content="#f7f8f2">
+body{
+  margin:0;
+  min-width:320px;
+  font-family:"DM Sans",Arial,sans-serif;
+  color:var(--navy);
+  background:var(--cream);
+  line-height:1.7;
+}
 
-    <title>Hojy's Paint & Property Care | Premium Property Services</title>
+img{
+  display:block;
+  width:100%;
+}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
-        rel="stylesheet"
-    >
+button,input,select,textarea{
+  font:inherit;
+}
 
-    <link rel="preload" as="image" href="./assets/hojys-logo.png">
-    <link rel="stylesheet" href="./style.css">
+.container{
+  width:min(1160px,calc(100% - 40px));
+  margin:auto;
+}
+
+/* HEADER */
+
+header{
+  position:fixed;
+  top:0;
+  right:0;
+  left:0;
+  z-index:100;
+  background:rgba(255,253,248,.94);
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(16px);
+}
+
+.nav{
+  min-height:88px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.brand-logo{
+  width:58px;
+  height:58px;
+  flex:0 0 58px;
+  overflow:hidden;
+  border-radius:13px;
+  background:#fff;
+  border:1px solid rgba(91,158,60,.2);
+  box-shadow:0 8px 25px rgba(16,35,49,.08);
+}
+
+.brand-logo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+}
+
+.brand-text strong{
+  font-family:"Playfair Display",serif;
+  font-size:19px;
+  letter-spacing:.1em;
+}
+
+.brand-text small{
+  color:var(--text);
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+nav{
+  display:flex;
+  align-items:center;
+  gap:27px;
+}
+
+nav a{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+}
+
+nav a:hover{
+  color:var(--green2);
+}
+
+.nav-quote{
+  padding:14px 19px;
+  color:#fff!important;
+  background:var(--navy);
+}
+
+.menu{
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:28px;
+  cursor:pointer;
+}
+
+/* GENERAL */
+
+.section{
+  padding:110px 0;
+}
+
+.eyebrow{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  color:var(--green2);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.17em;
+  text-transform:uppercase;
+}
+
+.eyebrow:before{
+  content:"";
+  width:34px;
+  height:1px;
+  background:currentColor;
+}
+
+h1,h2{
+  margin:0;
+  font-family:"Playfair Display",serif;
+  font-weight:600;
+  letter-spacing:-.04em;
+  line-height:1.02;
+}
+
+h1{
+  font-size:clamp(55px,7vw,100px);
+}
+
+h2{
+  margin-top:15px;
+  font-size:clamp(42px,5vw,72px);
+}
+
+h1 em,h2 em{
+  color:var(--green);
+  font-weight:500;
+}
+
+.heading{
+  max-width:790px;
+  margin-bottom:55px;
+}
+
+.heading p{
+  max-width:650px;
+  margin:20px 0 0;
+  color:var(--text);
+}
+
+.heading.center{
+  margin-right:auto;
+  margin-left:auto;
+  text-align:center;
+}
+
+.heading.center .eyebrow{
+  justify-content:center;
+}
+
+.heading.center p{
+  margin-right:auto;
+  margin-left:auto;
+}
+
+.button{
+  min-height:54px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 22px;
+  border:1px solid var(--navy);
+  cursor:pointer;
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+}
+
+.primary{
+  color:#fff;
+  background:var(--navy);
+}
+
+.secondary{
+  background:transparent;
+}
+
+/* HERO */
+
+.hero{
+  padding:155px 0 100px;
+  overflow:hidden;
+  background:linear-gradient(
+    115deg,
+    #fffdf8 0%,
+    #faf6ee 58%,
+    #e6efdc 100%
+  );
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.08fr .78fr;
+  align-items:center;
+  gap:75px;
+}
+
+.hero-copy p{
+  max-width:650px;
+  margin:28px 0 34px;
+  color:var(--text);
+  font-size:17px;
+}
+
+.hero-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.hero-photo{
+  position:relative;
+  height:620px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.hero-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.hero-photo:after{
+  position:absolute;
+  inset:0;
+  content:"";
+  background:linear-gradient(
+    to top,
+    rgba(16,35,49,.2),
+    transparent 55%
+  );
+}
+
+/* TRUST */
+
+.trust{
+  color:#fff;
+  background:var(--navy);
+}
+
+.trust-grid{
+  min-height:82px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  align-items:center;
+  gap:16px;
+  text-align:center;
+}
+
+.trust-grid span{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* SERVICES */
+
+.services{
+  background:#fff;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.service-card{
+  min-height:295px;
+  padding:35px;
+  border:1px solid var(--line);
+  background:var(--cream);
+  transition:.25s;
+}
+
+.service-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 18px 45px rgba(16,35,49,.1);
+}
+
+.service-number{
+  color:var(--green);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:.1em;
+}
+
+.service-card h3{
+  margin:25px 0 12px;
+  font-family:"Playfair Display",serif;
+  font-size:27px;
+}
+
+.service-card p,
+.service-card li{
+  color:var(--text);
+  font-size:13px;
+}
+
+.service-card ul{
+  padding-left:18px;
+}
+
+/* WHY */
+
+.why{
+  color:#fff;
+  background:var(--navy);
+}
+
+.why h2,.why h3{
+  color:#fff;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  align-items:center;
+  gap:65px;
+}
+
+.why-photo{
+  height:650px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.why-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.why-copy>p{
+  color:rgba(255,255,255,.68);
+}
+
+.point{
+  display:grid;
+  grid-template-columns:45px 1fr;
+  gap:17px;
+  padding:22px 0;
+  border-top:1px solid rgba(255,255,255,.14);
+}
+
+.point:first-of-type{
+  margin-top:28px;
+}
+
+.point>b{
+  color:#b7d890;
+}
+
+.point h3{
+  margin:0 0 6px;
+  font-family:"Playfair Display",serif;
+  font-size:22px;
+}
+
+.point p{
+  margin:0;
+  color:rgba(255,255,255,.65);
+  font-size:13px;
+}
+
+/* PROCESS */
+
+.process-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+}
+
+.process{
+  padding-top:25px;
+  border-top:2px solid var(--green);
+}
+
+.process strong{
+  color:var(--green);
+  font-size:12px;
+}
+
+.process h3{
+  margin:17px 0 8px;
+  font-family:"Playfair Display",serif;
+  font-size:25px;
+}
+
+.process p{
+  color:var(--text);
+  font-size:13px;
+}
+
+/* PORTFOLIO */
+
+.portfolio{
+  background:var(--cream2);
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-auto-rows:315px;
+  gap:14px;
+}
+
+.project{
+  position:relative;
+  padding:0;
+  overflow:hidden;
+  border:0;
+  cursor:pointer;
+  text-align:left;
+  background:var(--navy);
+}
+
+.project.large{
+  grid-row:span 2;
+}
+
+.project.wide{
+  grid-column:span 2;
+}
+
+.project img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .5s;
+}
+
+.project:hover img{
+  transform:scale(1.045);
+}
+
+.project:after{
+  position:absolute;
+  inset:0;
+  content:"";
+  background:linear-gradient(
+    to top,
+    rgba(10,25,34,.87),
+    transparent 66%
+  );
+}
+
+.project-info{
+  position:absolute;
+  right:28px;
+  bottom:25px;
+  left:28px;
+  z-index:2;
+  color:#fff;
+}
+
+.project-info small{
+  color:#b7d890;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.project-info h3{
+  margin:5px 0 0;
+  color:#fff;
+  font-family:"Playfair Display",serif;
+  font-size:28px;
+}
+
+/* REVIEWS */
+
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+
+.review{
+  padding:32px;
+  border:1px solid var(--line);
+  background:#fff;
+}
+
+.stars{
+  color:var(--green);
+  letter-spacing:.08em;
+}
+
+.review blockquote{
+  margin:18px 0;
+  color:var(--text);
+}
+
+/* QUOTE */
+
+.quote{
+  background:#fff;
+}
+
+.quote-grid{
+  display:grid;
+  grid-template-columns:1fr .75fr;
+  align-items:start;
+  gap:20px;
+}
+
+form{
+  padding:35px;
+  border:1px solid var(--line);
+  background:var(--cream2);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.field{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  margin-bottom:15px;
+}
+
+.field.full{
+  grid-column:1/-1;
+}
+
+label{
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+
+input,select,textarea{
+  width:100%;
+  padding:14px;
+  border:1px solid rgba(16,35,49,.18);
+  outline:0;
+  background:#fff;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+  border-color:var(--green);
+  box-shadow:0 0 0 3px rgba(91,158,60,.12);
+}
+
+.quote-side{
+  position:sticky;
+  top:110px;
+  padding:35px;
+  color:#fff;
+  background:var(--navy);
+}
+
+.quote-side h3{
+  margin-top:10px;
+  font-family:"Playfair Display",serif;
+  font-size:30px;
+}
+
+.quote-side p{
+  color:rgba(255,255,255,.65);
+}
+
+.detail{
+  padding:15px 0;
+  border-top:1px solid rgba(255,255,255,.14);
+}
+
+.detail small{
+  display:block;
+  color:#b7d890;
+  font-weight:700;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+/* FOOTER */
+
+footer{
+  padding:55px 0;
+  color:#fff;
+  background:#091a25;
+}
+
+.footer{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:30px;
+}
+
+.footer strong{
+  font-family:"Playfair Display",serif;
+  font-size:24px;
+}
+
+.footer p{
+  margin:5px 0 0;
+  color:rgba(255,255,255,.55);
+  font-size:13px;
+}
+
+/* LIGHTBOX */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  z-index:500;
+  display:none;
+  place-items:center;
+  padding:30px;
+  background:rgba(5,15,21,.92);
+}
+
+.lightbox.open{
+  display:grid;
+}
+
+.lightbox-content{
+  position:relative;
+  width:100%;
+  max-width:1050px;
+}
+
+.lightbox img{
+  max-height:82vh;
+  object-fit:contain;
+}
+
+.close{
+  position:absolute;
+  top:10px;
+  right:10px;
+  z-index:3;
+  width:46px;
+  height:46px;
+  border:0;
+  cursor:pointer;
+  background:#fff;
+  font-size:25px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  nav{
+    position:absolute;
+    top:88px;
+    right:0;
+    left:0;
+    display:none;
+    flex-direction:column;
+    align-items:stretch;
+    padding:25px 20px;
+    border-bottom:1px solid var(--line);
+    background:var(--cream);
+  }
+
+  nav.open{
+    display:flex;
+  }
+
+  .menu{
+    display:block;
+  }
+
+  .hero-grid,
+  .why-grid,
+  .quote-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero-photo{
+    height:470px;
+  }
+
+  .service-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .process-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .trust-grid{
+    grid-template-columns:1fr 1fr;
+    padding:22px 0;
+  }
+
+  .quote-side{
+    position:static;
+  }
+}
+
+@media(max-width:600px){
+
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  .hero{
+    padding-top:130px;
+  }
+
+  h1{
+    font-size:53px;
+  }
+
+  .section{
+    padding:80px 0;
+  }
+
+  .service-grid,
+  .process-grid,
+  .review-grid,
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .gallery{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .project,
+  .project.large,
+  .project.wide{
+    height:420px;
+  }
+
+  .hero-photo{
+    height:420px;
+  }
+
+  .brand-text small{
+    display:none;
+  }
+
+  .footer{
+    align-items:flex-start;
+    flex-direction:column;
+  }
+}
+</style>
 </head>
 
 <body>
-    <div class="page-noise" aria-hidden="true"></div>
 
-    <!-- HEADER -->
-    <header class="site-header" id="siteHeader">
-        <div class="container nav-container">
-            <a href="#home" class="brand" aria-label="Hojy's home">
-                <span class="brand-mark" aria-hidden="true">
-                    <img
-                        src="./assets/hojys-logo.png"
-                        alt=""
-                        width="720"
-                        height="720"
-                    >
-                </span>
+<header>
+  <div class="container nav">
 
-                <span class="brand-text">
-                    <strong>HOJY'S</strong>
-                    <small>Paint & Property Care</small>
-                </span>
-            </a>
+    <a href="#home" class="brand">
 
-            <button
-                class="menu-button"
-                id="menuButton"
-                type="button"
-                aria-label="Open navigation menu"
-                aria-controls="mainNavigation"
-                aria-expanded="false"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+      <span class="brand-logo">
+        <img data-img="logo" alt="Hojy's Property Care logo">
+      </span>
 
-            <nav class="main-navigation" id="mainNavigation">
-                <a href="#services">Services</a>
-                <a href="#about">Why Hojy's</a>
-                <a href="#portfolio">Projects</a>
-                <a href="#process">Process</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#quote" class="nav-quote-button">
-                    Get a Quote
-                </a>
-            </nav>
-        </div>
-    </header>
+      <span class="brand-text">
+        <strong>HOJY'S</strong>
+        <small>Paint & Property Care</small>
+      </span>
 
-    <main>
-        <!-- HERO -->
-        <section class="hero-section" id="home">
-            <div class="hero-background" aria-hidden="true"></div>
+    </a>
 
-            <div class="container hero-layout">
-                <div class="hero-content reveal">
-                    <div class="eyebrow">
-                        <span></span>
-                        Premium Property Care
-                    </div>
+    <button class="menu" id="menu" aria-label="Open menu">☰</button>
 
-                    <h1>
-                        Exceptional spaces,
-                        <em>beautifully finished.</em>
-                    </h1>
+    <nav id="nav">
+      <a href="#services">Services</a>
+      <a href="#about">Why Hojy's</a>
+      <a href="#portfolio">Projects</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#quote" class="nav-quote">Get a Quote</a>
+    </nav>
 
-                    <p class="hero-description">
-                        Premium painting, landscaping, and seasonal property
-                        services completed with careful workmanship, dependable
-                        communication, and uncompromising attention to detail.
-                    </p>
+  </div>
+</header>
 
-                    <div class="hero-actions">
-                        <a href="#quote" class="button button-primary">
-                            Request a Free Quote
-                            <span aria-hidden="true">↗</span>
-                        </a>
+<main>
 
-                        <a href="#portfolio" class="button button-secondary">
-                            Explore Our Work
-                        </a>
-                    </div>
+<section class="hero" id="home">
 
-                    <div class="hero-trust">
-                        <div class="trust-item">
-                            <strong>Premium</strong>
-                            <span>Materials</span>
-                        </div>
+  <div class="container hero-grid">
 
-                        <div class="trust-divider"></div>
+    <div class="hero-copy">
 
-                        <div class="trust-item">
-                            <strong>Detailed</strong>
-                            <span>Workmanship</span>
-                        </div>
+      <div class="eyebrow">Premium Property Care</div>
 
-                        <div class="trust-divider"></div>
+      <h1>
+        Exceptional spaces,
+        <br>
+        <em>beautifully finished.</em>
+      </h1>
 
-                        <div class="trust-item">
-                            <strong>Clear</strong>
-                            <span>Quotations</span>
-                        </div>
-                    </div>
-                </div>
+      <p>
+        Premium painting, landscaping, and seasonal property services
+        completed with careful workmanship, dependable communication,
+        and attention to detail.
+      </p>
 
-                <div class="hero-visual reveal reveal-delay">
-                    <div class="hero-image-frame">
-                        <img
-                            src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85"
-                            alt="Beautifully finished luxury home interior"
-                            fetchpriority="high"
-                            decoding="async"
-                        >
+      <div class="hero-actions">
 
-                        <div class="hero-image-overlay"></div>
+        <a href="#quote" class="button primary">
+          Request a Free Quote ↗
+        </a>
 
-                        <div class="hero-floating-card">
-                            <span class="floating-card-icon">✓</span>
+        <a href="#portfolio" class="button secondary">
+          Explore Our Work
+        </a>
 
-                            <div>
-                                <strong>Crafted with care</strong>
-                                <p>Every surface. Every detail.</p>
-                            </div>
-                        </div>
-                    </div>
+      </div>
 
-                    <div class="hero-gold-outline" aria-hidden="true"></div>
-                </div>
-            </div>
-
-            <div class="hero-scroll-indicator">
-                <span>Discover</span>
-                <div></div>
-            </div>
-        </section>
-
-        <!-- TRUST STRIP -->
-        <section class="trust-strip">
-            <div class="container trust-strip-grid">
-                <div>
-                    <span class="trust-strip-icon">◆</span>
-                    Residential & Commercial
-                </div>
-
-                <div>
-                    <span class="trust-strip-icon">◆</span>
-                    Detailed Project Planning
-                </div>
-
-                <div>
-                    <span class="trust-strip-icon">◆</span>
-                    Clean & Respectful Service
-                </div>
-
-                <div>
-                    <span class="trust-strip-icon">◆</span>
-                    Quality-Focused Results
-                </div>
-            </div>
-        </section>
-
-        <!-- INTRO -->
-        <section class="section intro-section" id="about">
-            <div class="container intro-layout">
-                <div class="section-heading reveal">
-                    <div class="eyebrow">
-                        <span></span>
-                        Elevated Property Services
-                    </div>
-
-                    <h2>
-                        More than a service.
-                        <em>A better standard.</em>
-                    </h2>
-                </div>
-
-                <div class="intro-copy reveal reveal-delay">
-                    <p class="large-copy">
-                        Hojy's combines precision, professionalism, and
-                        thoughtful design to help every property look its best.
-                    </p>
-
-                    <p>
-                        From one-room transformations to complete exterior
-                        refreshes, seasonal cleanups, and landscape improvements,
-                        every project is approached with careful preparation and
-                        a clear plan.
-                    </p>
-
-                    <a href="#services" class="text-link">
-                        View all services
-                        <span>→</span>
-                    </a>
-                </div>
-            </div>
-
-            <div class="container stat-grid reveal">
-                <article class="stat-card">
-                    <strong>01</strong>
-                    <h3>Thoughtful Planning</h3>
-                    <p>
-                        Clear project details, expectations, materials, and
-                        estimated timelines before work begins.
-                    </p>
-                </article>
-
-                <article class="stat-card">
-                    <strong>02</strong>
-                    <h3>Careful Preparation</h3>
-                    <p>
-                        Surfaces and work areas are properly prepared to help
-                        produce cleaner, longer-lasting results.
-                    </p>
-                </article>
-
-                <article class="stat-card">
-                    <strong>03</strong>
-                    <h3>Refined Results</h3>
-                    <p>
-                        Final inspections and finishing details ensure every
-                        project is presented at its best.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <!-- SERVICES -->
-        <section class="section services-section" id="services">
-            <div class="container">
-                <div class="section-header centered reveal">
-                    <div class="eyebrow centered-eyebrow">
-                        <span></span>
-                        What We Do
-                        <span></span>
-                    </div>
-
-                    <h2>
-                        Complete care for
-                        <em>every season.</em>
-                    </h2>
-
-                    <p>
-                        Professional services designed to improve, protect, and
-                        maintain your property throughout the year.
-                    </p>
-                </div>
-
-                <div class="services-grid">
-                    <article
-                        class="service-card reveal"
-                        data-service-choice="interior"
-                    >
-                        <div class="service-number">01</div>
-
-                        <div class="service-icon">
-                            <svg viewBox="0 0 64 64" aria-hidden="true">
-                                <path d="M16 45V19h32v26"></path>
-                                <path d="M10 49h44"></path>
-                                <path d="M24 45V31h16v14"></path>
-                                <path d="M22 19V12h20v7"></path>
-                            </svg>
-                        </div>
-
-                        <h3>Interior Painting</h3>
-
-                        <p>
-                            Smooth, elegant interior finishes for walls,
-                            ceilings, trim, doors, feature walls, and complete
-                            home transformations.
-                        </p>
-
-                        <ul>
-                            <li>Walls, ceilings, and trim</li>
-                            <li>Feature walls and colour changes</li>
-                            <li>Drywall patching and preparation</li>
-                        </ul>
-
-                        <button class="service-quote-link" type="button">
-                            Quote this service
-                            <span>↗</span>
-                        </button>
-                    </article>
-
-                    <article
-                        class="service-card reveal"
-                        data-service-choice="exterior"
-                    >
-                        <div class="service-number">02</div>
-
-                        <div class="service-icon">
-                            <svg viewBox="0 0 64 64" aria-hidden="true">
-                                <path d="M8 31 32 12l24 19"></path>
-                                <path d="M14 27v25h36V27"></path>
-                                <path d="M25 52V36h14v16"></path>
-                                <path d="M18 35h5"></path>
-                                <path d="M41 35h5"></path>
-                            </svg>
-                        </div>
-
-                        <h3>Exterior Painting</h3>
-
-                        <p>
-                            Durable exterior painting that improves curb appeal
-                            and helps protect your property from the elements.
-                        </p>
-
-                        <ul>
-                            <li>Siding, stucco, and masonry</li>
-                            <li>Decks, fences, and exterior trim</li>
-                            <li>Preparation and weather-resistant coatings</li>
-                        </ul>
-
-                        <button class="service-quote-link" type="button">
-                            Quote this service
-                            <span>↗</span>
-                        </button>
-                    </article>
-
-                    <article
-                        class="service-card reveal"
-                        data-service-choice="commercial"
-                    >
-                        <div class="service-number">03</div>
-
-                        <div class="service-icon">
-                            <svg viewBox="0 0 64 64" aria-hidden="true">
-                                <path d="M12 54V18h26v36"></path>
-                                <path d="M38 30h14v24"></path>
-                                <path d="M8 54h48"></path>
-                                <path d="M19 26h5"></path>
-                                <path d="M29 26h5"></path>
-                                <path d="M19 35h5"></path>
-                                <path d="M29 35h5"></path>
-                                <path d="M19 44h5"></path>
-                                <path d="M29 44h5"></path>
-                            </svg>
-                        </div>
-
-                        <h3>Commercial Painting</h3>
-
-                        <p>
-                            Clean, coordinated painting solutions for offices,
-                            retail spaces, rentals, developments, and commercial
-                            properties.
-                        </p>
-
-                        <ul>
-                            <li>Office and retail spaces</li>
-                            <li>Rental turnovers and developments</li>
-                            <li>Flexible project scheduling</li>
-                        </ul>
-
-                        <button class="service-quote-link" type="button">
-                            Quote this service
-                            <span>↗</span>
-                        </button>
-                    </article>
-
-                    <article
-                        class="service-card reveal"
-                        data-service-choice="landscaping"
-                    >
-                        <div class="service-number">04</div>
-
-                        <div class="service-icon">
-                            <svg viewBox="0 0 64 64" aria-hidden="true">
-                                <path d="M32 54V23"></path>
-                                <path d="M32 31c-9 0-15-6-15-15 9 0 15 6 15 15Z"></path>
-                                <path d="M32 40c10 0 17-7 17-17-10 0-17 7-17 17Z"></path>
-                                <path d="M12 54h40"></path>
-                            </svg>
-                        </div>
-
-                        <h3>Landscaping</h3>
-
-                        <p>
-                            Property-enhancing landscape maintenance and outdoor
-                            improvements tailored to your space.
-                        </p>
-
-                        <ul>
-                            <li>Lawn and garden maintenance</li>
-                            <li>Edging, mulch, and planting</li>
-                            <li>Landscape cleanup and improvements</li>
-                        </ul>
-
-                        <button class="service-quote-link" type="button">
-                            Quote this service
-                            <span>↗</span>
-                        </button>
-                    </article>
-
-                    <article
-                        class="service-card reveal"
-                        data-service-choice="seasonal"
-                    >
-                        <div class="service-number">05</div>
-
-                        <div class="service-icon">
-                            <svg viewBox="0 0 64 64" aria-hidden="true">
-                                <path d="M32 8v48"></path>
-                                <path d="m21 14 11 7 11-7"></path>
-                                <path d="m21 50 11-7 11 7"></path>
-                                <path d="M11 20l42 24"></path>
-                                <path d="m12 33 12-1 5-11"></path>
-                                <path d="m52 31-12 1-5 11"></path>
-                                <path d="M11 44 53 20"></path>
-                            </svg>
-                        </div>
-
-                        <h3>Seasonal Maintenance</h3>
-
-                        <p>
-                            Keep your property clean, organized, and prepared as
-                            the seasons change.
-                        </p>
-
-                        <ul>
-                            <li>Spring and fall cleanups</li>
-                            <li>Leaf, debris, and yard removal</li>
-                            <li>Seasonal property preparation</li>
-                        </ul>
-
-                        <button class="service-quote-link" type="button">
-                            Quote this service
-                            <span>↗</span>
-                        </button>
-                    </article>
-
-                    <article
-                        class="service-card reveal"
-                        data-service-choice="winter"
-                    >
-                        <div class="service-number">06</div>
-
-                        <div class="service-icon">
-                            <svg viewBox="0 0 64 64" aria-hidden="true">
-                                <path d="M17 48h30"></path>
-                                <path d="M22 48 34 16"></path>
-                                <path d="M34 16h8l-7 18"></path>
-                                <path d="M20 34h15"></path>
-                                <path d="M14 54h36"></path>
-                            </svg>
-                        </div>
-
-                        <h3>Winter Property Care</h3>
-
-                        <p>
-                            Dependable winter maintenance for safer, cleaner
-                            walkways, driveways, entrances, and properties.
-                        </p>
-
-                        <ul>
-                            <li>Snow clearing</li>
-                            <li>Walkways and driveway service</li>
-                            <li>Recurring property care options</li>
-                        </ul>
-
-                        <button class="service-quote-link" type="button">
-                            Quote this service
-                            <span>↗</span>
-                        </button>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- WHY CHOOSE US -->
-        <section class="section quality-section">
-            <div class="container quality-layout">
-                <div class="quality-image reveal">
-                    <img
-                        src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1400&q=85"
-                        alt="Professional painter carefully finishing a wall"
-                        loading="lazy"
-                    >
-
-                    <div class="quality-image-label">
-                        <span>Our standard</span>
-                        <strong>Precision in every detail.</strong>
-                    </div>
-                </div>
-
-                <div class="quality-content reveal reveal-delay">
-                    <div class="eyebrow light-eyebrow">
-                        <span></span>
-                        The Hojy's Difference
-                    </div>
-
-                    <h2>
-                        Professional from the first conversation to the final
-                        walkthrough.
-                    </h2>
-
-                    <p>
-                        Great results begin with clear expectations. We focus on
-                        organized communication, proper preparation, clean work
-                        areas, and finishing details that make a visible
-                        difference.
-                    </p>
-
-                    <div class="quality-list">
-                        <article>
-                            <span>01</span>
-
-                            <div>
-                                <h3>Clear, Detailed Quotes</h3>
-                                <p>
-                                    Understand the project scope, recommended
-                                    work, and expected costs before committing.
-                                </p>
-                            </div>
-                        </article>
-
-                        <article>
-                            <span>02</span>
-
-                            <div>
-                                <h3>Respect for Your Property</h3>
-                                <p>
-                                    Work areas are protected, organized, and
-                                    cleaned throughout the project.
-                                </p>
-                            </div>
-                        </article>
-
-                        <article>
-                            <span>03</span>
-
-                            <div>
-                                <h3>Quality-First Workmanship</h3>
-                                <p>
-                                    Preparation and finishing receive the same
-                                    level of care as the visible final result.
-                                </p>
-                            </div>
-                        </article>
-                    </div>
-
-                    <a href="#quote" class="button button-gold">
-                        Plan Your Project
-                        <span>↗</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- PROCESS -->
-        <section class="section process-section" id="process">
-            <div class="container">
-                <div class="section-header reveal">
-                    <div>
-                        <div class="eyebrow">
-                            <span></span>
-                            Our Process
-                        </div>
-
-                        <h2>
-                            Simple, organized,
-                            <em>and transparent.</em>
-                        </h2>
-                    </div>
-
-                    <p>
-                        A straightforward project experience designed to keep you
-                        informed from beginning to end.
-                    </p>
-                </div>
-
-                <div class="process-grid">
-                    <article class="process-card reveal">
-                        <div class="process-top">
-                            <span>01</span>
-                            <div class="process-line"></div>
-                        </div>
-
-                        <h3>Request a Quote</h3>
-
-                        <p>
-                            Tell us about your property, the service you need,
-                            your goals, and your preferred timeframe.
-                        </p>
-                    </article>
-
-                    <article class="process-card reveal">
-                        <div class="process-top">
-                            <span>02</span>
-                            <div class="process-line"></div>
-                        </div>
-
-                        <h3>Project Assessment</h3>
-
-                        <p>
-                            We review the details, assess the project, and
-                            determine the preparation, materials, and labour
-                            required.
-                        </p>
-                    </article>
-
-                    <article class="process-card reveal">
-                        <div class="process-top">
-                            <span>03</span>
-                            <div class="process-line"></div>
-                        </div>
-
-                        <h3>Detailed Proposal</h3>
-
-                        <p>
-                            Receive a clear proposal covering the project scope,
-                            estimated cost, and expected scheduling.
-                        </p>
-                    </article>
-
-                    <article class="process-card reveal">
-                        <div class="process-top">
-                            <span>04</span>
-                            <div class="process-line"></div>
-                        </div>
-
-                        <h3>Professional Completion</h3>
-
-                        <p>
-                            Your service is completed with careful workmanship,
-                            clean execution, and a final walkthrough.
-                        </p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- PORTFOLIO -->
-        <section class="section portfolio-section" id="portfolio">
-            <div class="container">
-                <div class="section-header portfolio-header reveal">
-                    <div>
-                        <div class="eyebrow">
-                            <span></span>
-                            Featured Work
-                        </div>
-
-                        <h2>
-                            Spaces made
-                            <em>remarkable.</em>
-                        </h2>
-                    </div>
-
-                    <p>
-                        A closer look at recent interior refreshes, clean finishes,
-                        and the details that bring a property together.
-                    </p>
-                </div>
-
-                <div class="portfolio-grid">
-                    <button
-                        class="portfolio-item portfolio-large reveal portfolio-open"
-                        type="button"
-                        data-project-image="./assets/project-entry-refresh.webp"
-                        data-project-title="Fresh Interior Refresh"
-                        data-project-label="Interior Painting"
-                        aria-label="Open project photo: Fresh Interior Refresh"
-                    >
-                        <img
-                            src="./assets/project-entry-refresh.webp"
-                            alt="Freshly painted entry room with tiled floor and white trim"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                        <div class="portfolio-overlay">
-                            <span>Interior Painting</span>
-                            <h3>Fresh Interior Refresh</h3>
-                            <p>Clean wall colour, crisp trim, and a brighter finished space.</p>
-                        </div>
-                    </button>
-
-                    <button
-                        class="portfolio-item reveal portfolio-open"
-                        type="button"
-                        data-project-image="./assets/project-living-refresh.webp"
-                        data-project-title="Modern Living Area"
-                        data-project-label="Interior Finishes"
-                        aria-label="Open project photo: Modern Living Area"
-                    >
-                        <img
-                            src="./assets/project-living-refresh.webp"
-                            alt="Updated living area with fresh blue-grey walls and wood-look flooring"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                        <div class="portfolio-overlay">
-                            <span>Interior Finishes</span>
-                            <h3>Modern Living Area</h3>
-                        </div>
-                    </button>
-
-                    <button
-                        class="portfolio-item reveal portfolio-open"
-                        type="button"
-                        data-project-image="./assets/project-closet-finish.webp"
-                        data-project-title="Detail-Focused Finish"
-                        data-project-label="Interior Painting"
-                        aria-label="Open project photo: Detail-Focused Finish"
-                    >
-                        <img
-                            src="./assets/project-closet-finish.webp"
-                            alt="Freshly finished walk-in closet with painted walls and white shelving"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                        <div class="portfolio-overlay">
-                            <span>Interior Painting</span>
-                            <h3>Detail-Focused Finish</h3>
-                        </div>
-                    </button>
-
-                    <button
-                        class="portfolio-item portfolio-wide reveal portfolio-open"
-                        type="button"
-                        data-project-image="./assets/project-hallway-refresh.webp"
-                        data-project-title="Whole-Space Refresh"
-                        data-project-label="Property Improvement"
-                        aria-label="Open project photo: Whole-Space Refresh"
-                    >
-                        <img
-                            src="./assets/project-hallway-refresh.webp"
-                            alt="Clean finished hallway leading into an updated living space"
-                            loading="lazy"
-                            decoding="async"
-                        >
-
-                        <div class="portfolio-overlay">
-                            <span>Property Improvement</span>
-                            <h3>Whole-Space Refresh</h3>
-                            <p>Consistent colour, clean lines, and a polished finish from room to room.</p>
-                        </div>
-                    </button>
-                </div>
-
-                <p class="portfolio-hint reveal">
-                    Select any project photo to view it larger.
-                </p>
-            </div>
-        </section>
-
-        <!-- QUOTE SECTION -->
-        <section class="section quote-section" id="quote">
-            <div class="quote-decoration quote-decoration-one"></div>
-            <div class="quote-decoration quote-decoration-two"></div>
-
-            <div class="container">
-                <div class="section-header centered quote-heading reveal">
-                    <div class="eyebrow centered-eyebrow">
-                        <span></span>
-                        Free Project Estimate
-                        <span></span>
-                    </div>
-
-                    <h2>
-                        Start planning your
-                        <em>next transformation.</em>
-                    </h2>
-
-                    <p>
-                        Complete the form for an instant preliminary estimate.
-                        Final pricing is confirmed after the project details are
-                        reviewed.
-                    </p>
-                </div>
-
-                <div class="quote-layout">
-                    <form class="quote-form reveal" id="quoteForm" novalidate>
-                        <div class="form-section">
-                            <div class="form-section-heading">
-                                <span>01</span>
-
-                                <div>
-                                    <h3>Contact information</h3>
-                                    <p>Tell us how to reach you.</p>
-                                </div>
-                            </div>
-
-                            <div class="form-grid two-columns">
-                                <div class="form-group">
-                                    <label for="customerName">Full name *</label>
-
-                                    <input
-                                        type="text"
-                                        id="customerName"
-                                        name="customerName"
-                                        placeholder="Your full name"
-                                        autocomplete="name"
-                                        required
-                                    >
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="customerEmail">
-                                        Email address *
-                                    </label>
-
-                                    <input
-                                        type="email"
-                                        id="customerEmail"
-                                        name="customerEmail"
-                                        placeholder="you@example.com"
-                                        autocomplete="email"
-                                        required
-                                    >
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="customerPhone">
-                                        Phone number
-                                    </label>
-
-                                    <input
-                                        type="tel"
-                                        id="customerPhone"
-                                        name="customerPhone"
-                                        placeholder="(403) 555-0000"
-                                        autocomplete="tel"
-                                    >
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="projectLocation">
-                                        Project location *
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        id="projectLocation"
-                                        name="projectLocation"
-                                        placeholder="City or neighbourhood"
-                                        autocomplete="address-level2"
-                                        required
-                                    >
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-section">
-                            <div class="form-section-heading">
-                                <span>02</span>
-
-                                <div>
-                                    <h3>Project details</h3>
-                                    <p>Help us understand what you need.</p>
-                                </div>
-                            </div>
-
-                            <div class="form-grid two-columns">
-                                <div class="form-group">
-                                    <label for="serviceType">Service *</label>
-
-                                    <select
-                                        id="serviceType"
-                                        name="serviceType"
-                                        required
-                                    >
-                                        <option value="">
-                                            Select a service
-                                        </option>
-
-                                        <option value="interior">
-                                            Interior painting
-                                        </option>
-
-                                        <option value="exterior">
-                                            Exterior painting
-                                        </option>
-
-                                        <option value="commercial">
-                                            Commercial painting
-                                        </option>
-
-                                        <option value="landscaping">
-                                            Landscaping
-                                        </option>
-
-                                        <option value="seasonal">
-                                            Seasonal cleanup
-                                        </option>
-
-                                        <option value="winter">
-                                            Winter property care
-                                        </option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="propertySize">
-                                        Project size *
-                                    </label>
-
-                                    <select
-                                        id="propertySize"
-                                        name="propertySize"
-                                        required
-                                    >
-                                        <option value="">
-                                            Select approximate size
-                                        </option>
-
-                                        <option value="small">
-                                            Small project
-                                        </option>
-
-                                        <option value="medium">
-                                            Medium project
-                                        </option>
-
-                                        <option value="large">
-                                            Large project
-                                        </option>
-
-                                        <option value="estate">
-                                            Full property / major project
-                                        </option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="projectTiming">
-                                        Preferred timing
-                                    </label>
-
-                                    <select
-                                        id="projectTiming"
-                                        name="projectTiming"
-                                    >
-                                        <option value="flexible">
-                                            Flexible
-                                        </option>
-
-                                        <option value="month">
-                                            Within one month
-                                        </option>
-
-                                        <option value="soon">
-                                            Within two weeks
-                                        </option>
-
-                                        <option value="priority">
-                                            Priority scheduling
-                                        </option>
-                                    </select>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="propertyType">
-                                        Property type
-                                    </label>
-
-                                    <select
-                                        id="propertyType"
-                                        name="propertyType"
-                                    >
-                                        <option value="residential">
-                                            Residential
-                                        </option>
-
-                                        <option value="rental">
-                                            Rental property
-                                        </option>
-
-                                        <option value="commercial">
-                                            Commercial
-                                        </option>
-
-                                        <option value="other">
-                                            Other
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <fieldset class="form-group add-ons-group">
-                                <legend>Optional project additions</legend>
-
-                                <div class="checkbox-grid">
-                                    <label class="checkbox-card">
-                                        <input
-                                            type="checkbox"
-                                            name="addOns"
-                                            value="surfacePrep"
-                                        >
-
-                                        <span class="custom-checkbox"></span>
-
-                                        <span>
-                                            <strong>Surface preparation</strong>
-                                            <small>Patching, repairs, or prep</small>
-                                        </span>
-                                    </label>
-
-                                    <label class="checkbox-card">
-                                        <input
-                                            type="checkbox"
-                                            name="addOns"
-                                            value="materials"
-                                        >
-
-                                        <span class="custom-checkbox"></span>
-
-                                        <span>
-                                            <strong>Premium materials</strong>
-                                            <small>Higher-grade finishes</small>
-                                        </span>
-                                    </label>
-
-                                    <label class="checkbox-card">
-                                        <input
-                                            type="checkbox"
-                                            name="addOns"
-                                            value="cleanup"
-                                        >
-
-                                        <span class="custom-checkbox"></span>
-
-                                        <span>
-                                            <strong>Removal and cleanup</strong>
-                                            <small>Extra debris or disposal</small>
-                                        </span>
-                                    </label>
-
-                                    <label class="checkbox-card">
-                                        <input
-                                            type="checkbox"
-                                            name="addOns"
-                                            value="consultation"
-                                        >
-
-                                        <span class="custom-checkbox"></span>
-
-                                        <span>
-                                            <strong>Colour or design help</strong>
-                                            <small>Selection consultation</small>
-                                        </span>
-                                    </label>
-                                </div>
-                            </fieldset>
-
-                            <div class="form-group">
-                                <label for="projectDescription">
-                                    Tell us about the project *
-                                </label>
-
-                                <textarea
-                                    id="projectDescription"
-                                    name="projectDescription"
-                                    rows="6"
-                                    placeholder="Describe the spaces, surfaces, property condition, colours, landscaping work, or seasonal service you need..."
-                                    required
-                                ></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-actions">
-                            <button
-                                type="button"
-                                class="button button-secondary calculate-button"
-                                id="calculateQuoteButton"
-                            >
-                                Calculate Estimate
-                            </button>
-
-                            <button
-                                type="submit"
-                                class="button button-primary"
-                            >
-                                Email Quote Request
-                                <span>↗</span>
-                            </button>
-                        </div>
-
-                        <p class="form-status" id="formStatus" role="status"></p>
-                    </form>
-
-                    <aside class="estimate-card reveal reveal-delay">
-                        <div class="estimate-card-top">
-                            <span>Preliminary estimate</span>
-                            <div class="estimate-status">
-                                <i></i>
-                                Live calculator
-                            </div>
-                        </div>
-
-                        <div class="estimate-price" id="estimatePrice">
-                            <small>Estimated project range</small>
-                            <strong>Complete the form</strong>
-                        </div>
-
-                        <div class="estimate-details">
-                            <div>
-                                <span>Selected service</span>
-                                <strong id="summaryService">Not selected</strong>
-                            </div>
-
-                            <div>
-                                <span>Project size</span>
-                                <strong id="summarySize">Not selected</strong>
-                            </div>
-
-                            <div>
-                                <span>Preferred timing</span>
-                                <strong id="summaryTiming">Flexible</strong>
-                            </div>
-
-                            <div>
-                                <span>Optional additions</span>
-                                <strong id="summaryAddOns">None selected</strong>
-                            </div>
-                        </div>
-
-                        <div class="estimate-notice">
-                            <span>i</span>
-
-                            <p>
-                                This is a preliminary planning range, not a final
-                                quote. Site condition, measurements, materials,
-                                access, repairs, and project details can change
-                                final pricing.
-                            </p>
-                        </div>
-
-                        <div class="estimate-contact">
-                            <p>Prefer to speak directly?</p>
-
-                            <!-- REPLACE THIS PHONE NUMBER -->
-                            <a href="tel:+14035550198">
-                                (403) 555-0198
-                                <span>→</span>
-                            </a>
-                        </div>
-                    </aside>
-                </div>
-            </div>
-        </section>
-
-        <!-- REVIEWS -->
-        <section class="section reviews-section" id="reviews">
-            <div class="container">
-                <div class="section-header centered reveal">
-                    <div class="eyebrow centered-eyebrow">
-                        <span></span>
-                        Client Experience
-                        <span></span>
-                    </div>
-
-                    <h2>
-                        Service people feel
-                        <em>confident recommending.</em>
-                    </h2>
-
-                    <p>
-                        Replace these sample testimonials with genuine customer
-                        reviews once your business begins collecting them.
-                    </p>
-                </div>
-
-                <div class="reviews-grid">
-                    <article class="review-card reveal">
-                        <div class="review-stars" aria-label="5 out of 5 stars">
-                            ★★★★★
-                        </div>
-
-                        <blockquote>
-                            “The communication was clear, the work area stayed
-                            clean, and the finish completely changed the room.
-                            Everything looked sharp and professionally done.”
-                        </blockquote>
-
-                        <div class="review-client">
-                            <span>JM</span>
-
-                            <div>
-                                <strong>Sample Client</strong>
-                                <small>Interior painting</small>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="review-card featured-review reveal">
-                        <div class="review-stars" aria-label="5 out of 5 stars">
-                            ★★★★★
-                        </div>
-
-                        <blockquote>
-                            “We appreciated how organized the entire project
-                            felt. The quote was detailed, the preparation was
-                            thorough, and the final result exceeded what we had
-                            pictured.”
-                        </blockquote>
-
-                        <div class="review-client">
-                            <span>AR</span>
-
-                            <div>
-                                <strong>Sample Client</strong>
-                                <small>Exterior painting</small>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="review-card reveal">
-                        <div class="review-stars" aria-label="5 out of 5 stars">
-                            ★★★★★
-                        </div>
-
-                        <blockquote>
-                            “Our yard looked completely refreshed after the
-                            cleanup. The details around the garden beds and
-                            walkways made a noticeable difference.”
-                        </blockquote>
-
-                        <div class="review-client">
-                            <span>SK</span>
-
-                            <div>
-                                <strong>Sample Client</strong>
-                                <small>Seasonal landscaping</small>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ -->
-        <section class="section faq-section">
-            <div class="container faq-layout">
-                <div class="faq-heading reveal">
-                    <div class="eyebrow">
-                        <span></span>
-                        Common Questions
-                    </div>
-
-                    <h2>
-                        Everything you need
-                        <em>to get started.</em>
-                    </h2>
-
-                    <p>
-                        Still have a question? Contact us directly and we will
-                        help you determine the right service for your property.
-                    </p>
-
-                    <a href="#contact" class="text-link">
-                        Contact Hojy's
-                        <span>→</span>
-                    </a>
-                </div>
-
-                <div class="faq-list">
-                    <article class="faq-item reveal">
-                        <button
-                            type="button"
-                            class="faq-question"
-                            aria-expanded="false"
-                        >
-                            <span>Do you provide free quotes?</span>
-                            <i></i>
-                        </button>
-
-                        <div class="faq-answer">
-                            <p>
-                                Yes. You can begin with the online quote form.
-                                Depending on the project, additional measurements,
-                                photographs, or an on-site assessment may be
-                                required before final pricing is confirmed.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="faq-item reveal">
-                        <button
-                            type="button"
-                            class="faq-question"
-                            aria-expanded="false"
-                        >
-                            <span>
-                                Do customers need to purchase the materials?
-                            </span>
-                            <i></i>
-                        </button>
-
-                        <div class="faq-answer">
-                            <p>
-                                Material options can be included in the project
-                                proposal. The recommended products will depend on
-                                the surface, location, desired appearance, and
-                                durability requirements.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="faq-item reveal">
-                        <button
-                            type="button"
-                            class="faq-question"
-                            aria-expanded="false"
-                        >
-                            <span>How far in advance should I book?</span>
-                            <i></i>
-                        </button>
-
-                        <div class="faq-answer">
-                            <p>
-                                Booking as early as possible provides the greatest
-                                scheduling flexibility. Seasonal and exterior
-                                work can depend on weather conditions and may have
-                                higher demand during certain months.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="faq-item reveal">
-                        <button
-                            type="button"
-                            class="faq-question"
-                            aria-expanded="false"
-                        >
-                            <span>
-                                Do you work on commercial and rental properties?
-                            </span>
-                            <i></i>
-                        </button>
-
-                        <div class="faq-answer">
-                            <p>
-                                Yes. The service options can be adapted for
-                                residential, rental, retail, office, and other
-                                commercial property requirements.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="faq-item reveal">
-                        <button
-                            type="button"
-                            class="faq-question"
-                            aria-expanded="false"
-                        >
-                            <span>What areas do you serve?</span>
-                            <i></i>
-                        </button>
-
-                        <div class="faq-answer">
-                            <p>
-                                Update this answer with your actual primary
-                                service area and any nearby communities where
-                                additional travel charges may apply.
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTACT CTA -->
-        <section class="contact-section" id="contact">
-            <div class="contact-background" aria-hidden="true"></div>
-
-            <div class="container contact-layout">
-                <div class="contact-copy reveal">
-                    <div class="eyebrow light-eyebrow">
-                        <span></span>
-                        Let's Work Together
-                    </div>
-
-                    <h2>
-                        Your property deserves
-                        <em>exceptional care.</em>
-                    </h2>
-
-                    <p>
-                        Tell us what you are planning and receive a clear,
-                        no-pressure project quote.
-                    </p>
-                </div>
-
-                <div class="contact-details reveal reveal-delay">
-                    <a href="#quote" class="button button-gold">
-                        Get Your Free Quote
-                        <span>↗</span>
-                    </a>
-
-                    <div class="contact-links">
-                        <!-- REPLACE THESE CONTACT DETAILS -->
-                        <a href="tel:+14035550198">
-                            <small>Call us</small>
-                            <strong>(403) 555-0198</strong>
-                        </a>
-
-                        <a href="mailto:hello@hojyspaint.com">
-                            <small>Email us</small>
-                            <strong>hello@hojyspaint.com</strong>
-                        </a>
-
-                        <div>
-                            <small>Service area</small>
-                            <strong>Calgary & surrounding areas</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-        <div class="container footer-main">
-            <div class="footer-brand-column">
-                <a href="#home" class="brand footer-brand">
-                    <span class="brand-mark" aria-hidden="true">
-                    <img
-                        src="./assets/hojys-logo.png"
-                        alt=""
-                        width="720"
-                        height="720"
-                    >
-                </span>
-
-                    <span class="brand-text">
-                        <strong>HOJY'S</strong>
-                        <small>Paint & Property Care</small>
-                    </span>
-                </a>
-
-                <p>
-                    Premium painting, landscaping, and seasonal property
-                    services delivered with care.
-                </p>
-            </div>
-
-            <div class="footer-column">
-                <h3>Services</h3>
-
-                <a href="#services">Interior Painting</a>
-                <a href="#services">Exterior Painting</a>
-                <a href="#services">Commercial Painting</a>
-                <a href="#services">Landscaping</a>
-                <a href="#services">Seasonal Care</a>
-            </div>
-
-            <div class="footer-column">
-                <h3>Company</h3>
-
-                <a href="#about">About Hojy's</a>
-                <a href="#process">Our Process</a>
-                <a href="#portfolio">Our Work</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#quote">Request a Quote</a>
-            </div>
-
-            <div class="footer-column">
-                <h3>Contact</h3>
-
-                <a href="tel:+14035550198">(403) 555-0198</a>
-                <a href="mailto:hello@hojyspaint.com">
-                    hello@hojyspaint.com
-                </a>
-
-                <p>
-                    Calgary, Alberta<br>
-                    Canada
-                </p>
-            </div>
-        </div>
-
-        <div class="container footer-bottom">
-            <p>
-                © <span id="currentYear"></span> Hojy's Paint & Property Care.
-                All rights reserved.
-            </p>
-
-            <div>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
-    <div
-        class="project-lightbox"
-        id="projectLightbox"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="lightboxTitle"
-        aria-hidden="true"
-    >
-        <button
-            class="project-lightbox-backdrop"
-            type="button"
-            data-lightbox-close
-            aria-label="Close project image"
-        ></button>
-
-        <div class="project-lightbox-dialog" role="document">
-            <button
-                type="button"
-                class="project-lightbox-close"
-                data-lightbox-close
-                aria-label="Close project image"
-            >
-                ×
-            </button>
-
-            <img
-                id="lightboxImage"
-                src=""
-                alt=""
-            >
-
-            <div class="project-lightbox-caption">
-                <span id="lightboxLabel"></span>
-                <h3 id="lightboxTitle"></h3>
-            </div>
-        </div>
     </div>
 
+    <div class="hero-photo">
+      <img data-img="p2" alt="Completed Hojy's interior project">
+    </div>
+
+  </div>
+
+</section>
+
+<section class="trust">
+
+  <div class="container trust-grid">
+    <span>◆ Residential & Commercial</span>
+    <span>◆ Detailed Project Planning</span>
+    <span>◆ Clean & Respectful Service</span>
+    <span>◆ Quality-Focused Results</span>
+  </div>
+
+</section>
+
+<section class="section services" id="services">
+
+  <div class="container">
+
+    <div class="heading center">
+
+      <div class="eyebrow">What We Do</div>
+
+      <h2>
+        Complete care for
+        <em>every season.</em>
+      </h2>
+
+      <p>
+        Professional services designed to improve, protect,
+        and maintain your property throughout the year.
+      </p>
+
+    </div>
+
+    <div class="service-grid">
+
+      <article class="service-card">
+        <div class="service-number">01</div>
+        <h3>Interior Painting</h3>
+        <p>
+          Smooth interior finishes for walls, ceilings, trim,
+          doors, and complete room transformations.
+        </p>
+        <ul>
+          <li>Walls, ceilings & trim</li>
+          <li>Feature walls</li>
+          <li>Drywall preparation</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">02</div>
+        <h3>Exterior Painting</h3>
+        <p>
+          Durable exterior finishes that improve curb appeal
+          and help protect your property.
+        </p>
+        <ul>
+          <li>Siding & exterior trim</li>
+          <li>Decks & fences</li>
+          <li>Weather-ready coatings</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">03</div>
+        <h3>Commercial Painting</h3>
+        <p>
+          Organized painting solutions for offices, rentals,
+          retail, and commercial properties.
+        </p>
+        <ul>
+          <li>Office & retail spaces</li>
+          <li>Rental turnovers</li>
+          <li>Flexible scheduling</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">04</div>
+        <h3>Landscaping</h3>
+        <p>
+          Property-enhancing landscape maintenance and outdoor
+          improvements tailored to your space.
+        </p>
+        <ul>
+          <li>Lawn & garden care</li>
+          <li>Edging & mulch</li>
+          <li>Property cleanup</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">05</div>
+        <h3>Seasonal Maintenance</h3>
+        <p>
+          Keep your property clean, organized, and ready
+          as the seasons change.
+        </p>
+        <ul>
+          <li>Spring & fall cleanup</li>
+          <li>Leaf & debris removal</li>
+          <li>Seasonal preparation</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-number">06</div>
+        <h3>Winter Property Care</h3>
+        <p>
+          Dependable winter maintenance for safer, cleaner
+          walkways, driveways, and entrances.
+        </p>
+        <ul>
+          <li>Snow clearing</li>
+          <li>Driveways & walkways</li>
+          <li>Recurring service</li>
+        </ul>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section why" id="about">
+
+  <div class="container why-grid">
+
+    <div class="why-photo">
+      <img data-img="p1" alt="Freshly completed Hojy's project">
+    </div>
+
+    <div class="why-copy">
+
+      <div class="eyebrow">The Hojy's Difference</div>
+
+      <h2>
+        Professional from the first conversation
+        to the final walkthrough.
+      </h2>
+
+      <p>
+        Great results begin with clear expectations.
+        We focus on organized communication, proper preparation,
+        clean work areas, and finishing details.
+      </p>
+
+      <div class="point">
+        <b>01</b>
+        <div>
+          <h3>Clear, Detailed Quotes</h3>
+          <p>
+            Understand the scope, recommended work,
+            and expected costs before committing.
+          </p>
+        </div>
+      </div>
+
+      <div class="point">
+        <b>02</b>
+        <div>
+          <h3>Respect for Your Property</h3>
+          <p>
+            Work areas are protected, organized,
+            and cleaned throughout the project.
+          </p>
+        </div>
+      </div>
+
+      <div class="point">
+        <b>03</b>
+        <div>
+          <h3>Quality-First Workmanship</h3>
+          <p>
+            Preparation receives the same care
+            as the visible final result.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="process">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <div class="eyebrow">Our Process</div>
+
+      <h2>
+        Simple, organized,
+        <em>and transparent.</em>
+      </h2>
+
+    </div>
+
+    <div class="process-grid">
+
+      <article class="process">
+        <strong>01</strong>
+        <h3>Request a Quote</h3>
+        <p>
+          Tell us about the property,
+          service, and preferred timeframe.
+        </p>
+      </article>
+
+      <article class="process">
+        <strong>02</strong>
+        <h3>Project Assessment</h3>
+        <p>
+          We review the preparation,
+          materials, and labour required.
+        </p>
+      </article>
+
+      <article class="process">
+        <strong>03</strong>
+        <h3>Detailed Proposal</h3>
+        <p>
+          Receive clear project scope,
+          pricing, and scheduling information.
+        </p>
+      </article>
+
+      <article class="process">
+        <strong>04</strong>
+        <h3>Professional Completion</h3>
+        <p>
+          Work is completed carefully,
+          cleanly, and finished with a walkthrough.
+        </p>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section portfolio" id="portfolio">
+
+  <div class="container">
+
+    <div class="heading">
+
+      <div class="eyebrow">Featured Work</div>
+
+      <h2>
+        Spaces made
+        <em>remarkable.</em>
+      </h2>
+
+      <p>
+        Real Hojy's project photos.
+        Click any project to view it larger.
+      </p>
+
+    </div>
+
+    <div class="gallery">
+
+      <button class="project large" type="button">
+
+        <img
+          data-img="p1"
+          alt="Freshly painted entry room"
+        >
+
+        <span class="project-info">
+          <small>Interior Painting</small>
+          <h3>Fresh Interior Refresh</h3>
+        </span>
+
+      </button>
+
+      <button class="project" type="button">
+
+        <img
+          data-img="p2"
+          alt="Updated living area"
+        >
+
+        <span class="project-info">
+          <small>Interior Finishes</small>
+          <h3>Modern Living Area</h3>
+        </span>
+
+      </button>
+
+      <button class="project" type="button">
+
+        <img
+          data-img="p3"
+          alt="Freshly finished walk-in closet"
+        >
+
+        <span class="project-info">
+          <small>Interior Painting</small>
+          <h3>Detail-Focused Finish</h3>
+        </span>
+
+      </button>
+
+      <button class="project wide" type="button">
+
+        <img
+          data-img="p4"
+          alt="Finished hallway and living area"
+        >
+
+        <span class="project-info">
+          <small>Property Improvement</small>
+          <h3>Whole-Space Refresh</h3>
+        </span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section" id="reviews">
+
+  <div class="container">
+
+    <div class="heading center">
+
+      <div class="eyebrow">Client Experience</div>
+
+      <h2>
+        Service people feel
+        <em>confident recommending.</em>
+      </h2>
+
+    </div>
+
+    <div class="review-grid">
+
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          “Clear communication, a clean work area,
+          and a sharp finished result.”
+        </blockquote>
+        <strong>Interior painting</strong>
+      </article>
+
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          “Organized from the quote through
+          preparation and final completion.”
+        </blockquote>
+        <strong>Property improvement</strong>
+      </article>
+
+      <article class="review">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          “The details made a noticeable difference
+          and the property felt refreshed.”
+        </blockquote>
+        <strong>Seasonal property care</strong>
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section quote" id="quote">
+
+  <div class="container">
+
+    <div class="heading center">
+
+      <div class="eyebrow">Free Project Estimate</div>
+
+      <h2>
+        Start planning your
+        <em>next transformation.</em>
+      </h2>
+
+      <p>
+        Send your project details below.
+      </p>
+
+    </div>
+
+    <div class="quote-grid">
+
+      <form id="quoteForm">
+
+        <div class="form-grid">
+
+          <div class="field">
+
+            <label for="name">Full name *</label>
+
+            <input
+              id="name"
+              name="name"
+              required
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="email">Email *</label>
+
+            <input
+              id="email"
+              name="email"
+              type="email"
+              required
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="phone">Phone</label>
+
+            <input
+              id="phone"
+              name="phone"
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="location">Project location *</label>
+
+            <input
+              id="location"
+              name="location"
+              required
+            >
+
+          </div>
+
+          <div class="field">
+
+            <label for="service">Service *</label>
+
+            <select
+              id="service"
+              name="service"
+              required
+            >
+              <option value="">Choose a service</option>
+              <option>Interior Painting</option>
+              <option>Exterior Painting</option>
+              <option>Commercial Painting</option>
+              <option>Landscaping</option>
+              <option>Seasonal Maintenance</option>
+              <option>Winter Property Care</option>
+            </select>
+
+          </div>
+
+          <div class="field">
+
+            <label for="timing">Preferred timing</label>
+
+            <select
+              id="timing"
+              name="timing"
+            >
+              <option>Flexible</option>
+              <option>Within one month</option>
+              <option>Within two weeks</option>
+              <option>As soon as possible</option>
+            </select>
+
+          </div>
+
+          <div class="field full">
+
+            <label for="details">
+              Tell us about the project *
+            </label>
+
+            <textarea
+              id="details"
+              name="details"
+              rows="7"
+              required
+              placeholder="Describe the property, surfaces, painting work, landscaping, cleanup, colours or seasonal service you need..."
+            ></textarea>
+
+          </div>
+
+        </div>
+
+        <button
+          type="submit"
+          class="button primary"
+        >
+          Email Quote Request ↗
+        </button>
+
+        <p
+          id="status"
+          style="margin:15px 0 0;color:#34752d;font-weight:700"
+        ></p>
+
+      </form>
+
+      <aside class="quote-side">
+
+        <div class="eyebrow">Let's Talk</div>
+
+        <h3>
+          Tell us what your property needs.
+        </h3>
+
+        <p>
+          Include as much detail as possible.
+          Photos, measurements, and scheduling
+          can be discussed after your request.
+        </p>
+
+        <div class="detail">
+          <small>Services</small>
+          Painting · Landscaping · Property Care
+        </div>
+
+        <div class="detail">
+          <small>Approach</small>
+          Clear planning · Clean work · Detailed results
+        </div>
+
+        <div class="detail">
+          <small>Pricing</small>
+          Project-specific quotes after review
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+
+  <div class="container footer">
+
+    <div>
+      <strong>HOJY'S</strong>
+      <p>Paint & Property Care</p>
+    </div>
+
+    <div>
+      <p>
+        © <span id="year"></span>
+        Hojy's Paint & Property Care
+      </p>
+    </div>
+
+  </div>
+
+</footer>
+
+<div class="lightbox" id="lightbox">
+
+  <div class="lightbox-content">
+
     <button
-        type="button"
-        class="back-to-top"
-        id="backToTop"
-        aria-label="Back to top"
+      class="close"
+      id="closeLightbox"
+      aria-label="Close image"
     >
-        ↑
+      ×
     </button>
 
-    <script src="./script.js"></script>
+    <img
+      id="lightboxImage"
+      alt=""
+    >
+
+  </div>
+
+</div>
+
+<script>
+
+/*
+IMPORTANT:
+THESE ARE THE ACTUAL EMBEDDED IMAGE FILES.
+
+DO NOT DELETE THIS OBJECT.
+YOU DO NOT NEED AN ASSETS OR IMAGES FOLDER.
+*/
+
+const IMAGES = {
+
+logo:
+"data:image/webp;base64,UklGRnAFAABXRUJQVlA4IGQFAABwGwCdASp4AHgAPulqrVGpJaQip5ZqcSAdCWUA1Z3Vf/qmA8R7s37/7EFvxEs8TE9hwFAZKpVADxb9Cv1hwPC0yjZRsoJ5oSaE2PgqRSGykIuVcYDXDJnsCpb8I+wN1mh5AJ0vsPY6mSEOXYdPmGiIePli3KRbu0PfGZFeZVxoWzclOjndH+AlB7kuigi3szzCjjsS7QXxQkc3oUYX1oAIRaJfMXXCbSRNdXUGKPPPRgAx5Ao64Ozmt0fsWD0tLBQeKGy0z1GX+351Qrfzhmz5RZTYEzeAJ58IwEz37eW5IIocyAAA/vUIAAEeBJsvkfXZ7Yj/VUI+wkSJ1Jut+HfMDSUXvTbPkc/bhr4wEOScAa7cR+JU8K1vGStuA7godxX7BX6RE8NYqYvzybK3omtZprCGMZwKMnDLzxu0c5JH+CGhV4mH2gaX4RO5IkzetMrw6WT7EFhr2YSn/Eq8Me8H5/9dJFYvWLeFWZUUtzk6avZBFHz607FepHyC5NAzCEuI3CwRJVrE/CvOOHWlZm//9cCZYePVxXkGZP0bO3KgUyhsaw/KJZJ8w3rM0lnCQtrTotUrjjVSRDk9b62ZPPDtVPSu09TtKeYbuEjcPnCOQijY9vk+fApCKYSx8Ull5x2bXDPXgo4T3RvR3DuMUn9FyXPv0wY+LNk5/QJKfHeVl6/tmYKZ8G80rDQEV+RbffXr8Ki7s4rOnGI24eCN31fTYT8Ab5TYD0QsPd92s7MjJnZYG2xAg/+3QIb/3b+HeQexT/QFZqBRyi35tU1tne2MxTiYYO87pSVFvbmwvce+kbhQxxapyY2XkwLsvl+62u189LeWPhras496l8CkZC4HLPZu0bns5KyzK/5VQkyaF3eq6W8TfB5yO/lU/o/u156pS8OGHWDFncg3CmPCM+zyFpwk6u0XIbMzcWSWYw/Y0F7fmFT5G6u85l/kG1s0NmsJtHq8PNL8lPl3ezNvWKxxkIc2NXDEtCywPS5Y93VztB8w5iYzvFsPaNZymMMcoA1Rv7s/5Pw52QjjLSKRI55DOcGj69IHdGCm+neeWq4dIfrVzycVGVjYd7H04BGCoBQ/ExYK/h4+0hXcp8JCz9aYdghW8T9u/MoByXVSdA3wffHBprJofOBbnJsb9JjWGoo3B7viy+dwgdKxO2O/uG8av7fCnNCFsL4wl24PUX7KUBM3UCUG0K+pTO21ozwb1E+s5CSLkQ/rp3Fcb3rH22+gQaf+o+U9gOAsHU0GcWWArXR+i8DLyBV4YPi1c5VUOigQLLfEuJqYttaWrQlr5lXm4DiKsyZc8hMGc9SYEPVU8I3srwPD6qKEUD98r8L6qPpBd7OUBu6leQuAGL7grvzXozLDx2JwDs8cHzFg9LUrvXEHA8oxF1j5cJ5JkInZ/Kq0DpKQzpVdC3lnez+L7hXS70O2zq8UDbJ+pg4/o3O/ehgh1A6NQRXWEEXR/0cVAdrdlRcSu73Dlbt7WMA9zYMKVO/xoFQGtrKl54dTKSb+AGDXRr4LzmDDGkGxZMT+nXCB5rlzM/CBC8LfitXCmLcq4n0pYhygooH/TK27Irt5Oc3jUBG+H5fqrPkE68OA0IpB6r/ig2OFQUpfftwp4RtPEj2MFWbXd6MEfuJD+NnEsMiFVOazmPgDXy7zp+QOz9VyyllgdHtzTawiIifALAQdhwyGHgAGkB/QrpnqlvCJ9sRJiFXhO3artl7WgZMRk4WWHNdSR7xL9b4vxDLxThRjVOlVHVA5+rHteisdiq6COlIot9Up6+s+VTLPXqb++95G/Gr6x/doEaTZCf9/cVOzI9hHMIlVa3EKFIJ7O4oagAAAAAA=",
+
+p1:
+"data:image/webp;base64,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",
+
+p2:
+"data:image/webp;base64,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",
+
+p3:
+"data:image/webp;base64,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",
+
+p4:
+"data:image/webp;base64,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"
+
+};
+
+
+/*
+Loads the embedded images above into the page.
+*/
+
+document
+  .querySelectorAll("[data-img]")
+  .forEach((image) => {
+
+    const imageName =
+      image.getAttribute("data-img");
+
+    image.src =
+      IMAGES[imageName];
+
+  });
+
+
+/* MOBILE NAVIGATION */
+
+const menu =
+  document.getElementById("menu");
+
+const navigation =
+  document.getElementById("nav");
+
+menu.addEventListener(
+  "click",
+  () => {
+
+    navigation
+      .classList
+      .toggle("open");
+
+  }
+);
+
+navigation
+  .querySelectorAll("a")
+  .forEach((link) => {
+
+    link.addEventListener(
+      "click",
+      () => {
+
+        navigation
+          .classList
+          .remove("open");
+
+      }
+    );
+
+  });
+
+
+/* PROJECT LIGHTBOX */
+
+const lightbox =
+  document.getElementById("lightbox");
+
+const lightboxImage =
+  document.getElementById("lightboxImage");
+
+const closeLightbox =
+  document.getElementById("closeLightbox");
+
+document
+  .querySelectorAll(".project")
+  .forEach((project) => {
+
+    project.addEventListener(
+      "click",
+      () => {
+
+        const projectImage =
+          project.querySelector("img");
+
+        lightboxImage.src =
+          projectImage.src;
+
+        lightboxImage.alt =
+          projectImage.alt;
+
+        lightbox
+          .classList
+          .add("open");
+
+      }
+    );
+
+  });
+
+closeLightbox.addEventListener(
+  "click",
+  () => {
+
+    lightbox
+      .classList
+      .remove("open");
+
+  }
+);
+
+lightbox.addEventListener(
+  "click",
+  (event) => {
+
+    if(event.target === lightbox){
+
+      lightbox
+        .classList
+        .remove("open");
+
+    }
+
+  }
+);
+
+document.addEventListener(
+  "keydown",
+  (event) => {
+
+    if(event.key === "Escape"){
+
+      lightbox
+        .classList
+        .remove("open");
+
+    }
+
+  }
+);
+
+
+/* QUOTE FORM */
+
+document
+  .getElementById("quoteForm")
+  .addEventListener(
+    "submit",
+    (event) => {
+
+      event.preventDefault();
+
+      const form =
+        new FormData(event.currentTarget);
+
+      const name =
+        form.get("name");
+
+      const email =
+        form.get("email");
+
+      const phone =
+        form.get("phone") ||
+        "Not provided";
+
+      const location =
+        form.get("location");
+
+      const service =
+        form.get("service");
+
+      const timing =
+        form.get("timing");
+
+      const details =
+        form.get("details");
+
+      const subject =
+        `New Hojy's Quote Request - ${service} - ${name}`;
+
+      const body =
+`Hello Hojy's Paint & Property Care,
+
+I would like to request a project quote.
+
+CONTACT INFORMATION
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Location: ${location}
+
+PROJECT INFORMATION
+
+Service: ${service}
+Preferred timing: ${timing}
+
+PROJECT DETAILS
+
+${details}
+
+Please contact me to discuss the project and final pricing.
+
+Thank you,
+${name}`;
+
+      document
+        .getElementById("status")
+        .textContent =
+        "Opening your email app...";
+
+      window.location.href =
+        "mailto:hello@hojyspaint.com" +
+        "?subject=" +
+        encodeURIComponent(subject) +
+        "&body=" +
+        encodeURIComponent(body);
+
+    }
+  );
+
+
+/* YEAR */
+
+document
+  .getElementById("year")
+  .textContent =
+  new Date().getFullYear();
+
+</script>
+
 </body>
 </html>
