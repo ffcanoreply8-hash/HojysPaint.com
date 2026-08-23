@@ -1,6 +1,6 @@
 /* =========================================================
    HOJY'S PAINT & PROPERTY CARE
-   Premium Cream, White, Charcoal and Gold Website Theme
+   Premium Cream, Navy and Green Website Theme
 ========================================================= */
 
 :root {
@@ -9,19 +9,19 @@
     --cream-200: #f2eadc;
     --cream-300: #e7dbc7;
 
-    --gold-300: #d9c18d;
-    --gold-400: #c9aa68;
-    --gold-500: #b9934c;
-    --gold-600: #967136;
+    --gold-300: #b7d890;
+    --gold-400: #86b85b;
+    --gold-500: #5b9e3c;
+    --gold-600: #34752d;
 
-    --charcoal-900: #171715;
-    --charcoal-800: #22211e;
-    --charcoal-700: #35332f;
-    --charcoal-600: #514e47;
-    --charcoal-500: #6c685f;
+    --charcoal-900: #102331;
+    --charcoal-800: #172d3b;
+    --charcoal-700: #304550;
+    --charcoal-600: #51636c;
+    --charcoal-500: #6d7b82;
 
     --white: #ffffff;
-    --success: #40644a;
+    --success: #34752d;
     --error: #9e403a;
 
     --font-heading: "Playfair Display", Georgia, serif;
@@ -361,14 +361,22 @@ h3 {
 
 .brand-mark {
     display: grid;
-    width: 43px;
-    height: 43px;
+    width: 56px;
+    height: 56px;
+    flex-shrink: 0;
     place-items: center;
-    border: 1px solid var(--gold-400);
-    color: var(--gold-600);
-    font-family: var(--font-heading);
-    font-size: 1.45rem;
-    line-height: 1;
+    overflow: hidden;
+    border: 1px solid rgba(91, 158, 60, 0.18);
+    border-radius: 12px;
+    background: var(--white);
+    box-shadow: 0 8px 24px rgba(16, 35, 49, 0.08);
+}
+
+.brand-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transform: scale(1.08);
 }
 
 .brand-text {
@@ -1138,8 +1146,29 @@ h3 {
 
 .portfolio-item {
     position: relative;
+    width: 100%;
     overflow: hidden;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    color: inherit;
     background: var(--charcoal-800);
+    box-shadow: 0 16px 45px rgba(16, 35, 49, 0.08);
+    cursor: zoom-in;
+    text-align: left;
+    transition:
+        transform var(--transition),
+        box-shadow var(--transition);
+}
+
+.portfolio-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 58px rgba(16, 35, 49, 0.14);
+}
+
+.portfolio-item:focus-visible {
+    outline: 3px solid rgba(91, 158, 60, 0.45);
+    outline-offset: 4px;
 }
 
 .portfolio-large {
@@ -2507,5 +2536,156 @@ h3 {
     .reveal {
         opacity: 1;
         transform: none;
+    }
+}
+
+/* =========================================================
+   BRAND + PORTFOLIO POLISH
+========================================================= */
+
+.portfolio-hint {
+    margin: 18px 0 0;
+    color: var(--charcoal-500);
+    font-size: 0.73rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.project-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: grid;
+    place-items: center;
+    padding: 28px;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition:
+        opacity 220ms ease,
+        visibility 220ms ease;
+}
+
+.project-lightbox.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.project-lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    cursor: zoom-out;
+    background: rgba(8, 21, 30, 0.82);
+    backdrop-filter: blur(12px);
+}
+
+.project-lightbox-dialog {
+    position: relative;
+    z-index: 1;
+    width: min(980px, 92vw);
+    max-height: 88vh;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: 0 34px 100px rgba(0, 0, 0, 0.35);
+}
+
+.project-lightbox-dialog img {
+    width: 100%;
+    max-height: 72vh;
+    object-fit: contain;
+    background: #0d1d27;
+}
+
+.project-lightbox-caption {
+    padding: 18px 22px 21px;
+    background: var(--white);
+}
+
+.project-lightbox-caption span {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--gold-600);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.project-lightbox-caption h3 {
+    margin: 0;
+    font-family: var(--font-heading);
+    font-size: clamp(1.25rem, 3vw, 1.8rem);
+    font-weight: 600;
+}
+
+.project-lightbox-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    display: grid;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--white);
+    background: rgba(16, 35, 49, 0.82);
+    cursor: pointer;
+    font-size: 1.8rem;
+    line-height: 1;
+    transition:
+        background var(--transition),
+        transform var(--transition);
+}
+
+.project-lightbox-close:hover {
+    background: var(--gold-600);
+    transform: rotate(4deg) scale(1.04);
+}
+
+body.lightbox-open {
+    overflow: hidden;
+}
+
+@media (max-width: 700px) {
+    .brand {
+        gap: 10px;
+    }
+
+    .brand-mark {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+    }
+
+    .project-lightbox {
+        padding: 14px;
+    }
+
+    .project-lightbox-dialog {
+        width: 100%;
+        max-height: 92vh;
+    }
+
+    .project-lightbox-dialog img {
+        max-height: 74vh;
+    }
+
+    .portfolio-hint {
+        text-align: left;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .portfolio-item,
+    .project-lightbox,
+    .project-lightbox-close {
+        transition: none;
     }
 }
