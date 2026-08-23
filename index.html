@@ -18,7 +18,7 @@
         content="painting, landscaping, seasonal maintenance, exterior painting, interior painting, property care"
     >
 
-    <meta name="theme-color" content="#f5efe4">
+    <meta name="theme-color" content="#f7f8f2">
 
     <title>Hojy's Paint & Property Care | Premium Property Services</title>
 
@@ -30,6 +30,7 @@
         rel="stylesheet"
     >
 
+    <link rel="preload" as="image" href="./assets/hojys-logo.png">
     <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -40,7 +41,14 @@
     <header class="site-header" id="siteHeader">
         <div class="container nav-container">
             <a href="#home" class="brand" aria-label="Hojy's home">
-                <span class="brand-mark">H</span>
+                <span class="brand-mark" aria-hidden="true">
+                    <img
+                        src="./assets/hojys-logo.png"
+                        alt=""
+                        width="720"
+                        height="720"
+                    >
+                </span>
 
                 <span class="brand-text">
                     <strong>HOJY'S</strong>
@@ -135,6 +143,8 @@
                         <img
                             src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1400&q=85"
                             alt="Beautifully finished luxury home interior"
+                            fetchpriority="high"
+                            decoding="async"
                         >
 
                         <div class="hero-image-overlay"></div>
@@ -670,69 +680,102 @@
                     </div>
 
                     <p>
-                        Replace these sample images with photographs of your real
-                        completed projects before launching the website.
+                        A closer look at recent interior refreshes, clean finishes,
+                        and the details that bring a property together.
                     </p>
                 </div>
 
                 <div class="portfolio-grid">
-                    <article class="portfolio-item portfolio-large reveal">
+                    <button
+                        class="portfolio-item portfolio-large reveal portfolio-open"
+                        type="button"
+                        data-project-image="./assets/project-entry-refresh.webp"
+                        data-project-title="Fresh Interior Refresh"
+                        data-project-label="Interior Painting"
+                        aria-label="Open project photo: Fresh Interior Refresh"
+                    >
                         <img
-                            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85"
-                            alt="Modern painted living room"
+                            src="./assets/project-entry-refresh.webp"
+                            alt="Freshly painted entry room with tiled floor and white trim"
                             loading="lazy"
+                            decoding="async"
                         >
 
                         <div class="portfolio-overlay">
                             <span>Interior Painting</span>
-                            <h3>Warm Modern Living Space</h3>
-                            <p>Walls, trim, preparation, and final detailing.</p>
+                            <h3>Fresh Interior Refresh</h3>
+                            <p>Clean wall colour, crisp trim, and a brighter finished space.</p>
                         </div>
-                    </article>
+                    </button>
 
-                    <article class="portfolio-item reveal">
+                    <button
+                        class="portfolio-item reveal portfolio-open"
+                        type="button"
+                        data-project-image="./assets/project-living-refresh.webp"
+                        data-project-title="Modern Living Area"
+                        data-project-label="Interior Finishes"
+                        aria-label="Open project photo: Modern Living Area"
+                    >
                         <img
-                            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1200&q=85"
-                            alt="Elegant contemporary interior"
+                            src="./assets/project-living-refresh.webp"
+                            alt="Updated living area with fresh blue-grey walls and wood-look flooring"
                             loading="lazy"
+                            decoding="async"
                         >
 
                         <div class="portfolio-overlay">
-                            <span>Premium Finishes</span>
-                            <h3>Refined Interior Update</h3>
+                            <span>Interior Finishes</span>
+                            <h3>Modern Living Area</h3>
                         </div>
-                    </article>
+                    </button>
 
-                    <article class="portfolio-item reveal">
+                    <button
+                        class="portfolio-item reveal portfolio-open"
+                        type="button"
+                        data-project-image="./assets/project-closet-finish.webp"
+                        data-project-title="Detail-Focused Finish"
+                        data-project-label="Interior Painting"
+                        aria-label="Open project photo: Detail-Focused Finish"
+                    >
                         <img
-                            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85"
-                            alt="Luxury home exterior"
+                            src="./assets/project-closet-finish.webp"
+                            alt="Freshly finished walk-in closet with painted walls and white shelving"
                             loading="lazy"
+                            decoding="async"
                         >
 
                         <div class="portfolio-overlay">
-                            <span>Exterior Painting</span>
-                            <h3>Complete Exterior Refresh</h3>
+                            <span>Interior Painting</span>
+                            <h3>Detail-Focused Finish</h3>
                         </div>
-                    </article>
+                    </button>
 
-                    <article class="portfolio-item portfolio-wide reveal">
+                    <button
+                        class="portfolio-item portfolio-wide reveal portfolio-open"
+                        type="button"
+                        data-project-image="./assets/project-hallway-refresh.webp"
+                        data-project-title="Whole-Space Refresh"
+                        data-project-label="Property Improvement"
+                        aria-label="Open project photo: Whole-Space Refresh"
+                    >
                         <img
-                            src="https://images.unsplash.com/photo-1558904541-efa843a96f01?auto=format&fit=crop&w=1600&q=85"
-                            alt="Professional landscaping and garden care"
+                            src="./assets/project-hallway-refresh.webp"
+                            alt="Clean finished hallway leading into an updated living space"
                             loading="lazy"
+                            decoding="async"
                         >
 
                         <div class="portfolio-overlay">
-                            <span>Landscaping</span>
-                            <h3>Clean, Carefully Maintained Grounds</h3>
-                            <p>
-                                Seasonal cleanup, garden care, edging, and
-                                finishing.
-                            </p>
+                            <span>Property Improvement</span>
+                            <h3>Whole-Space Refresh</h3>
+                            <p>Consistent colour, clean lines, and a polished finish from room to room.</p>
                         </div>
-                    </article>
+                    </button>
                 </div>
+
+                <p class="portfolio-hint reveal">
+                    Select any project photo to view it larger.
+                </p>
             </div>
         </section>
 
@@ -1407,7 +1450,14 @@
         <div class="container footer-main">
             <div class="footer-brand-column">
                 <a href="#home" class="brand footer-brand">
-                    <span class="brand-mark">H</span>
+                    <span class="brand-mark" aria-hidden="true">
+                    <img
+                        src="./assets/hojys-logo.png"
+                        alt=""
+                        width="720"
+                        height="720"
+                    >
+                </span>
 
                     <span class="brand-text">
                         <strong>HOJY'S</strong>
@@ -1468,6 +1518,44 @@
             </div>
         </div>
     </footer>
+
+    <div
+        class="project-lightbox"
+        id="projectLightbox"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="lightboxTitle"
+        aria-hidden="true"
+    >
+        <button
+            class="project-lightbox-backdrop"
+            type="button"
+            data-lightbox-close
+            aria-label="Close project image"
+        ></button>
+
+        <div class="project-lightbox-dialog" role="document">
+            <button
+                type="button"
+                class="project-lightbox-close"
+                data-lightbox-close
+                aria-label="Close project image"
+            >
+                ×
+            </button>
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt=""
+            >
+
+            <div class="project-lightbox-caption">
+                <span id="lightboxLabel"></span>
+                <h3 id="lightboxTitle"></h3>
+            </div>
+        </div>
+    </div>
 
     <button
         type="button"
