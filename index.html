@@ -13,6 +13,7 @@
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
+  <div class="page-progress" id="pageProgress" aria-hidden="true"></div>
   <header class="site-header" id="siteHeader">
     <div class="container nav-wrap">
       <a class="brand" href="#home" aria-label="Hojy's home">
@@ -30,31 +31,33 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
+          <div class="availability"><i></i> Now booking Calgary projects</div>
           <p class="eyebrow">Paint • Landscape • Maintain</p>
           <h1>Your property, <em>finished properly.</em></h1>
           <p class="lead">Careful workmanship, clear communication, and dependable property services—inside, outside, and through every Calgary season.</p>
           <div class="actions"><a class="button primary" href="#quote">Request a free quote <span>↗</span></a><a class="button ghost" href="#projects">See recent work</a></div>
-          <ul class="hero-proof" aria-label="Service promises"><li>Detailed quotes</li><li>Clean work areas</li><li>Quality-first finish</li></ul>
+          <div class="hero-trust"><div><strong>Detail-first</strong><span>Preparation & finish</span></div><div><strong>Clear quotes</strong><span>No vague surprises</span></div><div><strong>Calgary local</strong><span>Season-ready care</span></div></div>
         </div>
-        <figure class="hero-image reveal">
+        <figure class="hero-image reveal" data-tilt>
           <img src="images/hero-modern-interior.webp.jpg" alt="A bright, freshly finished modern interior" width="469" height="620" fetchpriority="high">
           <figcaption><strong>Thoughtful work.</strong><span>Clean, careful, complete.</span></figcaption>
+          <div class="floating-note"><b>✓</b><span><strong>Quality checked</strong><small>Before every handoff</small></span></div>
         </figure>
       </div>
     </section>
 
-    <section class="service-band" aria-label="Service highlights"><div class="container"><span>Residential</span><span>Commercial</span><span>Interior & exterior</span><span>Year-round care</span></div></section>
+    <section class="service-band" aria-label="Service highlights"><div class="ticker"><div class="ticker-track"><span>Residential painting</span><b>✦</b><span>Commercial spaces</span><b>✦</b><span>Interior & exterior</span><b>✦</b><span>Year-round care</span><b>✦</b><span>Residential painting</span><b>✦</b><span>Commercial spaces</span><b>✦</b><span>Interior & exterior</span><b>✦</b><span>Year-round care</span><b>✦</b></div></div></section>
 
     <section class="section" id="services">
       <div class="container">
         <header class="section-heading reveal"><div><p class="eyebrow">What we do</p><h2>One trusted team for <em>every season.</em></h2></div><p>Professional services designed to improve, protect, and maintain your property throughout the year.</p></header>
         <div class="service-grid">
-          <article class="service-card reveal"><span>01</span><h3>Interior Painting</h3><p>Walls, ceilings, trim, doors, feature walls, and complete room transformations.</p><a href="#quote" data-service="Interior Painting">Get a quote →</a></article>
-          <article class="service-card reveal"><span>02</span><h3>Exterior Painting</h3><p>Weather-ready finishes for siding, exterior trim, decks, fences, and more.</p><a href="#quote" data-service="Exterior Painting">Get a quote →</a></article>
-          <article class="service-card reveal"><span>03</span><h3>Commercial Painting</h3><p>Organized solutions for offices, rentals, retail, and commercial properties.</p><a href="#quote" data-service="Commercial Painting">Get a quote →</a></article>
-          <article class="service-card reveal"><span>04</span><h3>Landscaping</h3><p>Lawn care, garden maintenance, edging, mulch, and outdoor improvements.</p><a href="#quote" data-service="Landscaping">Get a quote →</a></article>
-          <article class="service-card reveal"><span>05</span><h3>Seasonal Cleanup</h3><p>Spring and fall cleanup, leaf removal, debris clearing, and preparation.</p><a href="#quote" data-service="Seasonal Cleanup">Get a quote →</a></article>
-          <article class="service-card reveal"><span>06</span><h3>Winter Property Care</h3><p>Dependable snow clearing for driveways, walkways, and entrances.</p><a href="#quote" data-service="Winter Property Care">Get a quote →</a></article>
+          <article class="service-card reveal"><span>01</span><i>↗</i><h3>Interior Painting</h3><p>Walls, ceilings, trim, doors, feature walls, and complete room transformations.</p><a href="#quote" data-service="Interior Painting">Plan this project →</a></article>
+          <article class="service-card reveal"><span>02</span><i>↗</i><h3>Exterior Painting</h3><p>Weather-ready finishes for siding, exterior trim, decks, fences, and more.</p><a href="#quote" data-service="Exterior Painting">Plan this project →</a></article>
+          <article class="service-card reveal"><span>03</span><i>↗</i><h3>Commercial Painting</h3><p>Organized solutions for offices, rentals, retail, and commercial properties.</p><a href="#quote" data-service="Commercial Painting">Plan this project →</a></article>
+          <article class="service-card reveal"><span>04</span><i>↗</i><h3>Landscaping</h3><p>Lawn care, garden maintenance, edging, mulch, and outdoor improvements.</p><a href="#quote" data-service="Landscaping">Plan this project →</a></article>
+          <article class="service-card reveal"><span>05</span><i>↗</i><h3>Seasonal Cleanup</h3><p>Spring and fall cleanup, leaf removal, debris clearing, and preparation.</p><a href="#quote" data-service="Seasonal Cleanup">Plan this project →</a></article>
+          <article class="service-card reveal"><span>06</span><i>↗</i><h3>Winter Property Care</h3><p>Dependable snow clearing for driveways, walkways, and entrances.</p><a href="#quote" data-service="Winter Property Care">Plan this project →</a></article>
         </div>
       </div>
     </section>
@@ -82,10 +85,13 @@
 
     <section class="section process-section" id="process"><div class="container"><header class="section-heading reveal"><div><p class="eyebrow">How it works</p><h2>Simple. Organized. <em>Transparent.</em></h2></div></header><ol class="process-grid"><li class="reveal"><span>01</span><h3>Tell us about it</h3><p>Share your property, service, and ideal timing.</p></li><li class="reveal"><span>02</span><h3>We assess</h3><p>We review preparation, materials, and labour.</p></li><li class="reveal"><span>03</span><h3>Get your proposal</h3><p>Receive a clear scope, price, and schedule.</p></li><li class="reveal"><span>04</span><h3>Enjoy the result</h3><p>We complete the work and walk through it with you.</p></li></ol></div></section>
 
+    <section class="testimonial-section"><div class="container testimonial reveal"><span>“</span><p>Good property work should feel organized, respectful, and refreshingly straightforward.</p><small>The standard behind every Hojy's project</small></div></section>
+
     <section class="section faq-section" id="faq"><div class="container faq-layout"><div class="reveal"><p class="eyebrow">Good to know</p><h2>Questions, <em>answered.</em></h2><p>Still unsure? Send the details you have. We can help define the next step.</p></div><div class="faq-list reveal">
-      <article class="faq-item"><button aria-expanded="false">Do you provide free estimates?<span>+</span></button><div><p>Yes. Tell us about your project through the quote form and we’ll follow up to discuss the details.</p></div></article>
-      <article class="faq-item"><button aria-expanded="false">Do you handle small projects?<span>+</span></button><div><p>Yes. Share the scope and location, and we’ll confirm whether it fits our current service schedule.</p></div></article>
-      <article class="faq-item"><button aria-expanded="false">What areas do you serve?<span>+</span></button><div><p>Include your location in the request so availability and travel can be confirmed before booking.</p></div></article>
+      <article class="faq-item"><button aria-expanded="false"><b>01</b>Do you provide free estimates?<span>+</span></button><div><p>Yes. Tell us about your project through the quote form and we’ll follow up to discuss the details.</p></div></article>
+      <article class="faq-item"><button aria-expanded="false"><b>02</b>Do you handle small projects?<span>+</span></button><div><p>Yes. Share the scope and location, and we’ll confirm whether it fits our current service schedule.</p></div></article>
+      <article class="faq-item"><button aria-expanded="false"><b>03</b>What areas do you serve?<span>+</span></button><div><p>Include your location in the request so availability and travel can be confirmed before booking.</p></div></article>
+      <article class="faq-item"><button aria-expanded="false"><b>04</b>What should I include in my request?<span>+</span></button><div><p>Your location, the areas involved, current condition, preferred timing, and any details that help describe the project.</p></div></article>
     </div></div></section>
 
     <section class="section quote-section" id="quote"><div class="container quote-grid"><div class="quote-intro reveal"><p class="eyebrow">Start your project</p><h2>Tell us what needs <em>attention.</em></h2><p>Send a few details and your email app will open with a complete, ready-to-send request.</p><div class="contact-card"><small>Prefer email?</small><a href="mailto:hello@hojyspaint.com">hello@hojyspaint.com</a></div></div>
